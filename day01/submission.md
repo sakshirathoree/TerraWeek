@@ -1,6 +1,6 @@
 # 7 Days Terraweek Challenge: Day 1 - Getting Started with Terraform
 
-Hello connections, It’s my day 1 of the 7 days Terraweek challenge, where we will dive into the basic concepts of Terraform.
+Hello connections, It’s my day 1 of the 7 days Terraweek challenge, where we will dive into the **basic concepts of Terraform.**
 
 -  What is Terraform and how does it revolutionize infrastructure management?
 -  Why do we need it and how does it simplify provisioning?
@@ -25,33 +25,35 @@ Let’s now understand What Is Terraform?
 
 ## What Is Terraform?
 
-Terraform is like a magic wand that lets you **create and manage your infrastructure using code.** But what does that mean? Well, instead of clicking buttons or typing commands, you write simple instructions in a special language that Terraform understands. With Terraform, you can describe your desired infrastructure state in configuration files, similar to writing a recipe, and Terraform will work its magic to create and maintain your infrastructure.
+**Terraform** is like a magic wand that lets you **create and manage your infrastructure using code.** But what does that mean? Well, instead of clicking buttons or typing commands, you write simple instructions in a special language that Terraform understands. With Terraform, you can describe your desired infrastructure state in configuration files, similar to writing a recipe, and Terraform will work its magic to create and maintain your infrastructure.
 
 Terraform is one of the most popular open-source Infrastructure-as-code (IaC) tools, used to automate infrastructure tasks. It is used to automate the provisioning of your cloud resources.
 
 ### Why is Code Cool for Infrastructure?
 
-You might wonder why we need to use code for infrastructure. Good question! Think of it this way: When you write code, you can easily share it, keep track of changes, and work together with others. With Terraform, you can do the same thing with your infrastructure. You have a set of instructions (your code) that you can use again and again to create awesome things (your infrastructure).
+You might wonder why we need to use code for infrastructure. Good question! Think of it this way: When you write code, you can **easily share it, keep track of changes, and work together with others.** With Terraform, you can do the same thing with your infrastructure. You have a set of instructions (your code) that you can use again and again to create awesome things (your infrastructure).
 
 ### Why do we need Terraform and How Does it Simplify Infrastructure Provisioning?
 
-Managing infrastructure manually is prone to human errors, is time-consuming, and lacks consistency. This is where Terraform comes to the rescue! Here’s why we need Terraform and how it simplifies infrastructure provisioning:
+Managing infrastructure manually is prone to human errors, is time-consuming, and lacks consistency. This is where Terraform comes to the rescue! 
+
+**Here’s why we need Terraform and how it simplifies infrastructure provisioning:**
 
 - **Declarative Configuration:** Terraform uses simple and readable language to describe your infrastructure requirements. Instead of worrying about the specific steps to create each resource, you can focus on what you want your infrastructure to look like. It’s like telling Terraform your wish, and it grants it to you!
 
-- **Automation Made Easy:** With Terraform, you can automate the provisioning and management of your infrastructure. That means you can sit back and relax while Terraform does the heavy lifting for you. It’s like having a robot friend who follows your instructions flawlessly.
+- **Automation Made Easy:** With Terraform, you can **automate the provisioning and management of your infrastructure.** That means you can sit back and relax while Terraform does the heavy lifting for you. It’s like having a robot friend who follows your instructions flawlessly.
 
-- **Multi-Cloud Magic:** Want to use multiple cloud providers like AWS, Azure, or Google Cloud? No problem! Terraform supports various cloud platforms, making it a breeze to manage resources across different providers. It’s like having a universal remote control for your infrastructure.
+- **Multi-Cloud Magic:** Want to **use multiple cloud providers like AWS, Azure, or Google Cloud**? No problem! Terraform supports various cloud platforms, making it a breeze to manage resources across different providers. It’s like having a universal remote control for your infrastructure.
 
-- **Infrastructure as Code:** With Terraform, you can treat your infrastructure as code, just like you would with a cool video game. You write your infrastructure specifications in code, which brings a bunch of benefits. You can version control your code, collaborate with others, and reuse code snippets.
+- **Infrastructure as Code:** With Terraform, you can treat your infrastructure as code, just like you would with a cool video game. You write your infrastructure specifications in code, which brings a bunch of benefits. You can **version control your code, collaborate with others, and reuse code snippets.**
 
-- **Plan and Apply:** Terraform helps you plan ahead before making any changes to your infrastructure. It analyzes your code and shows you a preview of what will happen when you apply it. This way, you can review and double-check everything, ensuring a smooth and error-free provisioning process. It’s like having a virtual assistant who shows you a blueprint before building your dream house.
+- **Plan and Apply:** Terraform helps you plan ahead before making any changes to your infrastructure. It **analyzes your code and shows you a preview of what will happen when you apply it.** This way, you can review and double-check everything, ensuring a smooth and error-free provisioning process. It’s like having a virtual assistant who shows you a blueprint before building your dream house.
 
-- **State Management:** Terraform keeps track of the current state of your infrastructure in a file. This state file is like a map that Terraform uses to understand what resources exist and their configurations. It helps Terraform make intelligent decisions when you modify or destroy resources. It’s like having a memory bank for your infrastructure changes.
+- **State Management:** Terraform **keeps track of the current state of your infrastructure in a file.** This state file is like a map that Terraform uses to understand what resources exist and their configurations. It helps Terraform make intelligent decisions when you modify or destroy resources. It’s like having a memory bank for your infrastructure changes.
 
 ### Common Terminologies in Terraform
 
-- **Provider:** Imagine you want to build a house, but you need land to do so. In Terraform, a provider is like a landowner who gives you the resources to build your infrastructure. Providers are responsible for managing various cloud platforms or infrastructure providers, such as AWS, Azure, or Google Cloud. Terraform officially supports around 130 providers.
+- **Provider:** Imagine you want to build a house, but you need land to do so. In Terraform, a **provider** is like a landowner who gives you the resources to build your infrastructure. Providers are responsible for managing various cloud platforms or infrastructure providers, such as AWS, Azure, or Google Cloud. Terraform officially supports around 130 providers.
  Here’s an example configuration block for the AWS provider:
 
     ```
@@ -60,12 +62,12 @@ Managing infrastructure manually is prone to human errors, is time-consuming, an
     }
     ```
 
-    A provider is responsible for understanding API interactions and exposing resources. It interacts with the various APIs required to create, update, and delete various resources. Terraform configurations must declare which providers they require so that Terraform can install and use them.
+A provider is **responsible for understanding API interactions and exposing resources.** It interacts with the various APIs required to create, update, and delete various resources. Terraform configurations must declare which providers they require so that Terraform can install and use them.
 
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/c2fd34de-16f3-4a09-8127-8ec67fa18eb4)
 
 
-- **Resource:** Resources are the building blocks of your infrastructure. They represent the individual components you want to create or manage, such as servers, databases, or networks. Resources are defined within a Terraform configuration file and are associated with a specific provider. Example:
+- **Resource:** **Resources** are the building blocks of your infrastructure. They represent the individual components you want to create or manage, such as servers, databases, or networks. Resources are defined within a Terraform configuration file and are associated with a specific provider. Example:
 
     ```terraform
     resource "aws_instance" "web_server" {
@@ -74,7 +76,7 @@ Managing infrastructure manually is prone to human errors, is time-consuming, an
     }
     ```
 
-- **Variable:** Variables are like placeholders that allow you to pass dynamic values to your Terraform code. They provide flexibility by allowing you to change values without modifying the code itself. Variables can be defined within your Terraform configuration files or in separate variable files. Example:
+- **Variable:** **Variables** are like placeholders that allow you to pass dynamic values to your Terraform code. They provide flexibility by allowing you to change values without modifying the code itself. Variables can be defined within your Terraform configuration files or in separate variable files. Example:
 
     ```terraform
     variable "region" {
@@ -82,7 +84,7 @@ Managing infrastructure manually is prone to human errors, is time-consuming, an
     }
     ```
 
-- **Module:** Think of a module as a ready-to-use blueprint for a specific set of infrastructure resources. It’s like a pre-built package that you can reuse across different projects. Modules help keep your code organized and promote consistency in your infrastructure. Example:
+- **Module:** Think of a **module** as a ready-to-use blueprint for a specific set of infrastructure resources. It’s like a pre-built package that you can reuse across different projects. Modules help keep your code organized and promote consistency in your infrastructure. Example:
 
     ```terraform
     module "vpc" {
@@ -96,7 +98,7 @@ Managing infrastructure manually is prone to human errors, is time-consuming, an
     ```
 *In this example, we’re using a pre-built module from the Terraform Registry to create a Virtual Private Cloud (VPC). We specify the module source, and version, and provide additional configurations specific to our project.*
 
-- **State:** The state is like a memory bank for your infrastructure. It keeps track of the current state of your resources and their configurations. Terraform uses the state to understand what’s already created, making it easier to manage and update your infrastructure. Example:
+- **State:** The **state** is like a memory bank for your infrastructure. It keeps track of the current state of your resources and their configurations. Terraform uses the state to understand what’s already created, making it easier to manage and update your infrastructure. Example:
 
     ```terraform
     terraform {
@@ -131,7 +133,7 @@ To install Terraform and set up the environment for AWS, you can follow these st
 **In this demo, I’m setting up Terraform in an AWS EC2 instance(Ubuntu AMI):**
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/5aa2400b-fbc5-4bbc-aa31-7dae5fbe89e0)
 
-Verify the installation using terraform — version:
+Verify the installation using **terraform — version:**
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/a4c5ce4c-ca3e-464b-b0a8-7fafc0045d85)
 
 
@@ -189,7 +191,7 @@ Verify the installation using terraform — version:
 
 ## Conclusion
 
-Terraform is the ultimate beginner’s best friend for infrastructure provisioning. It simplifies the process by allowing you to manage infrastructure with simple code, automate tasks, and work seamlessly across multiple cloud platforms. With Terraform, you can embrace the power of declarative configuration, treat your infrastructure as code, and leverage state management for smooth operations. So, take a deep breath, embrace the magic of Terraform, and say goodbye to a tedious manual infrastructure setup. Happy provisioning!
+Terraform is the ultimate beginner’s best friend for infrastructure provisioning. It **simplifies the process by allowing you to manage infrastructure with simple code, automate tasks, and work seamlessly across multiple cloud platforms.** With Terraform, you can embrace the power of declarative configuration, treat your infrastructure as code, and leverage state management for smooth operations. So, take a deep breath, embrace the magic of Terraform, and say goodbye to a tedious manual infrastructure setup. Happy provisioning!
 
 The above information is up to my understanding. Suggestions are always welcome.
 
