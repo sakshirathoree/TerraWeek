@@ -12,9 +12,9 @@ Before we deep dive into Terraform, let’s first understand the **Infrastructur
 
 ### What Is Infrastructure as Code (IaC)?
 
-Infrastructure as Code (IaC) is a fancy term that means managing your infrastructure using code. But what does that even mean? Think of it as a recipe for building things, but instead of cooking, we’re talking about technical stuff like servers, networks, and databases.
+Infrastructure as Code (IaC) is a fancy term that means **managing your infrastructure using code.** But what does that even mean? Think of it as a recipe for building things, but instead of cooking, we’re talking about technical stuff like servers, networks, and databases.
 
-Using IaC, you write instructions in a special language that tells your computer how to create and manage your infrastructure. It’s like giving your computer a super detailed to-do list, and it follows those instructions to make your infrastructure dreams come true.
+**Using IaC, you write instructions in a special language that tells your computer how to create and manage your infrastructure.** It’s like giving your computer a super detailed to-do list, and it follows those instructions to make your infrastructure dreams come true.
 
 There are various IaC tools available like Terraform, Chef, Puppet, and Ansible. Read the blog to know why Terraform is preferred over other IaC tools.
 
