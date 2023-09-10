@@ -1,4 +1,4 @@
-# 7 Days Terraweek Challenge: Getting Started with Terraform
+# 7 Days Terraweek Challenge: Day 1 - Getting Started with Terraform
 
 Hello connections, It’s my day 1 of the 7 days Terraweek challenge, where we will dive into the basic concepts of Terraform.
 
