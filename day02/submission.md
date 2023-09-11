@@ -27,7 +27,9 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
 }
 ```
-In this example,** resource is the block type, and aws_instance is the label for the block.** The block's contents, enclosed within curly braces, specify the properties of the EC2 instance, such as the Amazon Machine Image (AMI) and instance type.
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/a9767023-d0b5-47f1-b3e6-27e59cddacae)
+
+In this example,**resource is the block type, and aws_instance is the label for the block.** The block's contents, enclosed within curly braces, specify the properties of the EC2 instance, such as the Amazon Machine Image (AMI) and instance type.
 
 ### Parameters: Variables within Blocks
 
@@ -41,6 +43,8 @@ resource "aws_instance" "example" {
   instance_type = var.instance_type
 }
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/cadac684-77be-4944-a454-445aaece4e94)
+
 In this updated code snippet, **var.ami_id and var.instance_type are parameters.** Instead of hard-coding the values directly, we refer to the variables ami_id and instance_type. This way, we can pass different values to these parameters when using the block, making our code more reusable.
 
 ### Arguments: Assigning Values to Parameters
@@ -56,6 +60,8 @@ module "example" {
   instance_type = "t2.micro"
 }
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/54819136-bd87-4575-84c5-763d062b0b06)
+
 In this example, we are using the module block to instantiate an EC2 instance from a reusable module located in the ./modules/ec2 directory. We **assign values to the parameters ami_id and instance_type using the equals sign =.**
 
 Notice how the parameter names (ami_id and instance_type) match the variable names used within the block definition. This is important for the proper assignment of values.
@@ -73,6 +79,8 @@ variable "server_count" {
   default = 3
 }
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/d1871509-dd40-45ab-8b18-b5d2a461b15c)
+
 In this example, the server_count variable is defined with a type of number and a default value of "3".
 
 **Using Variables:**
@@ -86,6 +94,8 @@ resource "aws_instance" "example" {
   count         = var.server_count
 }
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/4f9460d1-2955-45ee-b045-fe1bbb1f2f6a)
+
 In this instance, we create multiple AWS EC2 instances using the aws_instance resource. The count attribute is set to var.server_count, which allows us to create a specified number of instances based on the value assigned to the server_count variable. In this case, it will create three EC2 instances.
 
 ### Data Types and Expressions:
@@ -115,6 +125,8 @@ output "adult_status" {
   value = var.is_adult ? "You are an adult." : "You are not an adult."
 }
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/09bef04c-ce84-4a6d-a30b-b82441884514)
+
 In this example, we have three variables: age, name, and is_adult. The age variable is of type number with a default value of 30. The name variable is of type string with a default value of "John Doe". The is_adult variable is of type bool, and its value is determined based on whether the age variable is greater than or equal to 18.
 
 The first output block uses string interpolation to create a greeting that includes the value of the name and age variables. The second output block uses a conditional expression to display a message depending on the value of the is_adult variable.
@@ -139,8 +151,9 @@ terraform {
     }
   }
 }
-
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/c1739fa2-9644-48ff-964c-b6f77da4adcb)
+
 
 **AWS Provider:**
 
@@ -151,6 +164,7 @@ provider "aws" {
   region = "us-east-1"
 }
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/c1c56452-f00f-4e39-95c5-304a1fc08e12)
 
 **Creating Resources**
 
@@ -166,6 +180,9 @@ resource "docker_container" "example" {
   }
 }
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/6a065f15-0d97-4269-bc44-28aab60a33b6)
+
+
 
 **In this example, we are creating a Docker container called nginx-container with the latest version of the nginx image and mapping port 80 to port 8080.**
 
@@ -178,6 +195,8 @@ data "aws_instance" "example" {
   instance_id = "i-0123456789abcdef0"
 }
 ```
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/29232418-f360-48e0-93c0-b8ef17922280)
+
 In this example, we are creating a data source that retrieves information about an AWS EC2 instance with the ID i-0123456789abcdef0.
 
 # Testing and Debugging
