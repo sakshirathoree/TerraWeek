@@ -29,21 +29,24 @@ Verify the installation using **terraform — version:**
 - Sign in to the AWS Management Console.
 - Create an IAM user or use an existing one with appropriate permissions for managing AWS resources. Ensure the user has permissions for EC2, VPC, S3, and other services you plan
   to work with.
-  ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/b8356fab-0ea5-4406-9ecf-b31b36d44fe0)
+  
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/b8356fab-0ea5-4406-9ecf-b31b36d44fe0)
 
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/72fc48ab-c854-4a8f-84ba-029f2f038b7f)
 
-![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/6911947a-ba85-4485-ab84-a4e8e4512143)
 **choose CLI or any reason as per your usage**
-![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/0e74e527-5c49-458a-aa06-a544e28c1dfc)
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/6911947a-ba85-4485-ab84-a4e8e4512143)
+
 **provide name to your credentials**
-![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/b8bd5f8c-eaa5-4fad-8684-0c3ea52891f9)
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/0e74e527-5c49-458a-aa06-a544e28c1dfc)
+
 **Download .csv file & keep it safe. It won’t be recovered later.**
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/b8bd5f8c-eaa5-4fad-8684-0c3ea52891f9)
 
 - Generate an **access key and secret key** for the IAM user. Make a note of these credentials as they will be required for Terraform to interact with AWS.
 - Configure the AWS CLI on your EC2 machine by running the following command in your terminal:
-- 
-  ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/c9a650d0-d3d3-4fb3-9dc9-ec24529a0013)
+ 
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/c9a650d0-d3d3-4fb3-9dc9-ec24529a0013)
 
 **4. Create Terraform configuration file:**
 
