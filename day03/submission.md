@@ -44,7 +44,7 @@ Verify the installation using **terraform — version:**
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/b8bd5f8c-eaa5-4fad-8684-0c3ea52891f9)
 
 - Generate an **access key and secret key** for the IAM user. Make a note of these credentials as they will be required for Terraform to interact with AWS.
-- Configure the AWS CLI on your EC2 machine by running the following command in your terminal:
+- Configure the **AWS CLI** on your EC2 machine by running the following command in your terminal:
  
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/c9a650d0-d3d3-4fb3-9dc9-ec24529a0013)
 
@@ -95,7 +95,7 @@ terraform apply**
 
 ### **Resource Dependencies & Provisioners**
 
-**Resource Dependencies:**
+- **Resource Dependencies:**
 Resource dependencies are like the **connections between different parts of your infrastructure.** They tell Terraform **the order in which things should be created or changed.** When you set up resource dependencies, you’re making sure that Terraform knows how to build your infrastructure in the right order, considering how different parts depend on each other.
 
 Let’s say you have an application that needs a web server and a database. You want to make sure the web server is set up first before the database because the database relies on the web server. By specifying the dependency, you’re telling Terraform that the database resource should wait until the web server is ready before it gets created or modified.
@@ -108,7 +108,7 @@ In this case, we have **two resources: the aws_instance and the aws_db_instance.
 
 When you run terraform apply, Terraform will figure out the right order based on these dependencies. It will make sure that everything gets set up correctly, taking into account the relationships between the resources.
 
-**Provisioners:**
+- **Provisioners:**
 Provisioners in Terraform are used **to execute scripts or other actions on a local or remote machine as part of the resource creation or destruction process.** Here’s an example of using a remote-exec provisioner to run a script on an AWS EC2 instance:
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/cd7d200b-a79f-4e7a-b93c-6254abfc3942)
 
@@ -120,7 +120,7 @@ Terraform allows you to manage the lifecycle of resources using the lifecycle bl
 - ***prevent_destroy:** Setting prevent_destroy to true prevents a resource from being destroyed. This can be useful to protect critical resources from accidental deletion.
   
 - ***ignore_changes:** ignore_changes allows you to specify resource attributes that Terraform should ignore when determining if a resource needs to be replaced. This can be helpful when certain attributes are managed outside of Terraform.
-- 
+   
 Here’s an example of using the lifecycle block to prevent the accidental destruction of an AWS EC2 instance:
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/1e06f255-e181-415c-8658-7f92af834653)
 
