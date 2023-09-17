@@ -3,7 +3,20 @@
 Welcome to **Day 4** of Terraweek!, we'll dive deeper into understanding **Terraform state files, their importance, and how to manage them effectively.**
 
 ## Table of Contents
--
+- [Introduction](#introduction)
+- [Terraform State File (terraform.tfstate)](#terraform-state-file-terraformtfstate)
+  - [What is Terraform State (terraform.tfstate) file?](#1-what-is-terraform-state-terraformtfstate-file)
+  - [How Does Terraform State Store Information?](#how-does-terraform-state-store-information)
+  - [Managing Terraform State](#managing-terraform-state)
+- [Purpose of Terraform State File](#2-what-is-the-purpose-of-terraform-state-file)
+  - [Resource Differentiation](#resource-differentiation)
+- [Terraform State File Metadata](#3-terraform-state-file-metadata)
+- [Terraform State Performance and Caching](#4-terraform-state-performance-and-caching)
+- [terraform_remote_state Data Source](#5-what-is-terraform_remote_state-data-source)
+- [Terraform State Storage, Manual State Pull/Push, and Locking](#6-terraform-state-storage-manual-state-pullpush-and-locking)
+  - [Storage](#61-storage)
+  - [Manual State Pull/Push](#62-manual-state-pullpush)
+  - [Terraform State Locking](#63-terraform-state-locking)
 - [Conclusion](#conclusion)
 
 ## Terraform State File (terraform.tfstate)
@@ -203,36 +216,5 @@ If you are storing terraform state file remotely then you should always use terr
 For sensitive data always consider securing the terraform state file because by default terraform store the state file in the JSON format.
 Do not try to force push the terraform state file, it will always lead you to inconsistent behavior.
 
-## Task 1: Importance of Terraform State
 
-📚 **Research:** Terraform State Management
 
-In the world of infrastructure as code, understanding Terraform state is paramount. Terraform state keeps track of the resources you've provisioned and their current state. This information is vital for several reasons:
-
-1. **Resource Tracking:** Terraform state helps you keep an accurate record of the resources you've created with Terraform. It stores the configuration and actual state of each resource, allowing Terraform to identify what needs to be updated, created, or destroyed during each run.
-
-2. **Concurrency Control:** When working collaboratively on infrastructure code, Terraform state prevents conflicts by locking the state file during operations. This ensures that only one user at a time can make changes, preventing unintended modifications.
-
-3. **Resource Dependencies:** Terraform uses state to understand the relationships between resources. For example, it knows that a virtual machine depends on a virtual network, so it manages their creation and destruction in the correct order.
-
-4. **Plan Calculation:** When you run `terraform plan`, Terraform compares the desired state (defined in your configuration) with the current state (stored in the state file). This allows Terraform to generate a plan for updating resources without making any changes yet.
-
-5. **State Backends:** Terraform provides options for storing the state, either locally or remotely, depending on your requirements.
-
-Understanding Terraform state is foundational to efficient infrastructure provisioning and management.
-
----
-
-## Task 2: Local State and `terraform state` Command
-
-📚 **Understand:** Local State and State Manipulation
-
-### 2.1 Local State Storage
-
-Start by exploring local state storage. In this context, Terraform stores the state file on your local machine. Create a simple Terraform configuration file (e.g., `main.tf`) to define some resources.
-
-```hcl
-resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
-}
