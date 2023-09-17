@@ -1,6 +1,10 @@
 # TerraWeek Day 4- State File Management🌱
 
-In this continuation of TerraWeek Day 4, we'll dive deeper into understanding **Terraform state files, their importance, and how to manage them effectively.**
+Welcome to **Day 4** of Terraweek!, we'll dive deeper into understanding **Terraform state files, their importance, and how to manage them effectively.**
+
+## Table of Contents
+-
+- [Conclusion](#conclusion)
 
 ## Terraform State File (terraform.tfstate)
 
