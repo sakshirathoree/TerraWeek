@@ -3,13 +3,11 @@
 Welcome to **Day 4** of Terraweek!, we'll dive deeper into understanding **Terraform state files, their importance, and how to manage them effectively.**
 
 ## Table of Contents
-- [Introduction](#introduction)
 - [Terraform State File (terraform.tfstate)](#terraform-state-file-terraformtfstate)
   - [What is Terraform State (terraform.tfstate) file?](#1-what-is-terraform-state-terraformtfstate-file)
   - [How Does Terraform State Store Information?](#how-does-terraform-state-store-information)
   - [Managing Terraform State](#managing-terraform-state)
 - [Purpose of Terraform State File](#2-what-is-the-purpose-of-terraform-state-file)
-  - [Resource Differentiation](#resource-differentiation)
 - [Terraform State File Metadata](#3-terraform-state-file-metadata)
 - [Terraform State Performance and Caching](#4-terraform-state-performance-and-caching)
 - [terraform_remote_state Data Source](#5-what-is-terraform_remote_state-data-source)
@@ -30,14 +28,14 @@ The `terraform.tfstate` file acts as a recorder for your infrastructure setup. I
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/e521eed0-32be-4710-907f-cd5d39f30749)
 
 
-### How Does Terraform State Store Information?
+### 2. How Does Terraform State Store Information?
 
 Terraform state file captures metadata about your infrastructure resources. Any changes you make or plan to make are stored inside this file. It's essential to note that you don't need to manage the information within the Terraform state file manually. Terraform takes care of updating it automatically during `terraform plan` and `terraform apply` operations.
 
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/439b1274-a39d-4985-a05c-7be7080f8079)
 
 
-#### Managing Terraform State
+### 3. Managing Terraform State
 
 1. **Saving Locally:** If you're the sole developer managing your infrastructure with Terraform, the state file is generated and saved locally by default. The `terraform apply` command generates the state file in your working directory.
 
@@ -46,7 +44,7 @@ Terraform state file captures metadata about your infrastructure resources. Any 
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/ac3d0e42-f797-4465-ba2f-9673b5ffe9a8)
 
 
-### 2. What is the Purpose of Terraform State File?
+## What is the Purpose of Terraform State File?
 
 The Terraform state file plays a crucial role in the infrastructure management process:
 
@@ -58,7 +56,7 @@ Now the question comes how can terraform differentiate the multiple resources of
 
 - **Resource Differentiation:** Terraform has its own local database known as Terraform state file where each resource is tagged with its own unique id and this unique id is stored in the state file in the form of metadata.
 
-### 3. Terraform State File Metadata
+## Terraform State File Metadata
 
 Metadata in the Terraform state file represents the information about your infrastructure setup. It includes details about resources, their attributes, and dependencies. Terraform maintains order and structure within the state file for efficient management.
 
@@ -75,7 +73,7 @@ This is how Terraform maintains a dependency order for maintaining the infrastru
 
 Here is a sample copy of metadata of my terraform state file -
 
-### 4. Terraform State Performance and Caching
+## Terraform State Performance and Caching
 
 The next benefit of Terraform state is file Caching. As terraform, state file acts as a local database for your terraform code, so before making any request to cloud infrastructure it first checks the local terraform state file to show the current status of the cloud infrastructure
 
@@ -91,7 +89,7 @@ Terraform state provides caching capabilities, making it efficient for querying 
 
 This information is retrieved from the state file, offering performance benefits.
 
-### 5. What is `terraform_remote_state` Data Source?
+## What is `terraform_remote_state` Data Source?
 
 In a collaborative environment with multiple developers, maintaining a single Terraform state file is essential. To retrieve metadata from the remote state file, you can use the `terraform_remote_state` data source.
 
@@ -147,10 +145,10 @@ resource "aws_instance" "jhooq-test" {
 
 ## Terraform State Storage, Manual state pull/push and Locking
 
-**Storage**
+1. **Storage**
 Terraform state files is can be stored on local as well as on remote it depends on your need. Storage of terraform state file is defined by the backend.
 
-Local Storage- Consider the following example of where terraform state storage is local -
+**Local Storage**- Consider the following example of where terraform state storage is local -
 
 ```
 data "terraform_remote_state" "remote_state" {
@@ -170,7 +168,7 @@ data "terraform_remote_state" "remote_state" {
 - When using the remote storage terraform will not persist/save the state file on the local disk.
 - Remote storage of Terraform state files is really beneficial for teams with multiple developers
 
-**Manual state pull/push**
+2. **Manual state pull/push**
 
 In the previous point, we discussed how to store state files locally and remotely. But apart from storing the state file there two more important operations -
 
@@ -188,7 +186,7 @@ terraform state pull
 terraform state push
 ```
 
-How to terraform prevents us from accidental state push?
+## How to terraform prevents us from accidental state push?
 
 1. Differing Lineage- Terraform has a safety mechanism on to terraform state file. Each time you create a terraform state file it will assign a lineage ID to the state file. If you are attempting to push the terraform state file with a different lineage ID then terraform will not allow it.
 
@@ -201,8 +199,8 @@ Considering all the safety mechanisms (lineage, Higher serial number) provided b
 terraform state push -force
 ```
 
-Terraform State Locking
-Terraform has one more safety mechanism known as locking by default terraform puts a lock on the terraform state file(if the backend supports the locking).
+3. Terraform State Locking
+Terraform has one more safety mechanism known as locking by default terraform puts a lock on the Terraform state file(if the backend supports the locking).
 
 Terraform state locking will prevent any other developer from updating terraform state file. Terraform locking always happens behind the scene but if terraform locking fails then terraform will not let you continue.
 
