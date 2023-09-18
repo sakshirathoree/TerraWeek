@@ -24,7 +24,10 @@ Welcome to **Day 4** of Terraweek!, we'll dive deeper into understanding **Terra
 
 ### 1. What is Terraform State (terraform.tfstate) file?
 
-The `**terraform.tfstate` file** acts as a **recorder for your infrastructure setup.** It's created from the very beginning when you run your first **`terraform apply`** command. This file stores critical information about your infrastructure, including the current state of resources. Any change you do with your infrastructure will have its presence in the terraform.tfstate file. So when you work with Terraform for managing and provisioning your infrastructure then terraform will always create a terraform.tfstate file for you.
+- The **`terraform.tfstate`** file acts as a **recorder for your infrastructure setup.**
+- It's created from the very beginning when you run your first **`terraform apply`** command.
+- This file **stores critical information about your infrastructure, including the current state of resources.**
+- Any change you make with your infrastructure will have its presence in the terraform.tfstate file. So when you work with Terraform for managing and provisioning your infrastructure then Terraform will always create a terraform.tfstate file for you.
 
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/826a12fc-2a80-464d-8618-ed80bc33db01)
 
@@ -32,7 +35,10 @@ The `**terraform.tfstate` file** acts as a **recorder for your infrastructure se
 
 ### 2. How Does Terraform State Store Information?
 
-**Terraform state file** captures m**etadata about your infrastructure resources.** Any changes you make or plan to make are stored inside this file. It's essential to note that you don't need to manage the information within the Terraform state file manually. **Terraform takes care of updating it automatically during `terraform plan` and `terraform apply` operations.**
+- **Terraform state file** captures m**etadata about your infrastructure resources.**
+- Any changes you make or plan to make are stored inside this file.
+- It's essential to note that you don't need to manage the information within the Terraform state file manually.
+- **Terraform takes care of updating it automatically during `terraform plan` and `terraform apply` operations.**
 
 ![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/439b1274-a39d-4985-a05c-7be7080f8079)
 
