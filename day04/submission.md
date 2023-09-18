@@ -163,7 +163,7 @@ resource "aws_instance" "rj-test" {
 Terraform state files can be stored locally as well as remotely depending on your need. Storage of terraform state files is defined by the backend.
 
    **Local Storage**- Consider the following example of where terraform state storage is local -
-```
+```hcl
 data "terraform_remote_state" "remote_state" {
   backend = "local"
 }
@@ -171,64 +171,15 @@ data "terraform_remote_state" "remote_state" {
 - When using the local storage terraform will persist/save the state file on the local disk
 - But if you are using the local storage then you have to manually push and pull the Terraform state file.
 
-  **Remote Storage** Here is one more example in which we have defined the storage as remote -
+   **Remote Storage** Here is one more example in which we have defined the storage as remote -
   ```hcl
   data "terraform_remote_state" "remote_state" {
-  backend = "remote"
-}
+    backend = "local"
+  }
 ```
+
 - When using the remote storage terraform will not persist/save the state file on the local disk.
-- Remote storage of Terraform state files is really beneficial for teams with multiple developers
+- Remote storage of Terraform state files is really beneficial for teams with multiple developers.
 
-2. **Manual state pull/push**
-
-In the previous point, we discussed how to store state files locally and remotely. But apart from storing the state file there two more important operations -
-
-- Pull terraform state file
-- Push terraform state file
-
-**1. Pull terraform state file-** It is quite often for a developer to take a break from work and during the break if developer's terraform project is out of sync then it is always recommended to get in sync with all the updates which has happened.
-
-So apart from doing the normal git pull it is also good to do the terraform state pull also so that all the latest changes which have been done on to terraform state file will be retrieved -
-```
-terraform state pull 
-```
-
-**2. Push terraform state file-** It is a dangerous command to work with. It can potentially lead you to an inconsistent state where you might override other team member changes on to terraform state file. It is often discouraged to use terraform state push command.
-```
-terraform state push
-```
-
-## How do terraform prevent us from accidental state push?
-
-**1. Differing Lineage-** Terraform has a safety mechanism on to terraform state file. Each time you create a terraform state file it will assign a lineage ID to the state file. If you are attempting to push the terraform state file with a different lineage ID then terraform will not allow it.
-
-**2. Higher Serial Number-** Apart from the unique lineage ID terraform also assigns a unique and higher serial number to terraform state file. If you are attempting to push a terraform state file that has a lower higher serial number then Terraform will not allow you to push a terraform state file.
-
-**How to force push to terraform state file?**
-
-Considering all the safety mechanisms (lineage, Higher serial number) provided by Terraform, if you still wanna override those safety settings then you can use -force flag to push your Terraform state file.
-```
-terraform state push -force
-```
-
-**3. Terraform State Locking**
-Terraform has one more safety mechanism known as locking by default terraform puts a lock on the Terraform state file(if the backend supports the locking).
-
-Terraform state locking will prevent any other developer from updating terraform state file. Terraform locking always happens behind the scene but if terraform locking fails then terraform will not let you continue.
-
-# Conclusion
-**Terraform state file** is always the **core heart of terraform project.** You must treat the terraform state file with care otherwise, you might end up in a situation where your terraform project is full of mess and hard to manage.
-
-**The best practices for using terraform state file which I could recommend is -**
-
-- If you have more than one developer working on the Terraform project then it is always recommended to use a remote backend to store your state file remotely.
-- If you are storing terraform state file remotely then you should always use terraform state pull before you start working with your terraform project
-- For sensitive data always consider securing the terraform state file because by default terraform store the state file in the JSON format.
-- Do not try to force push the terraform state file, it will always lead you to inconsistent behavior.
-
-The above information is up to my understanding. Suggestions are always welcome.
-
-Thank you for reading! Connect me on LinkedIn: [**Rajlaxmi Rathore**](https://www.linkedin.com/in/rajlaxmi-rathore-97880a1b2/)
 
 
