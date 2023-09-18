@@ -10,7 +10,7 @@ Welcome to **Day 4** of Terraweek!, we'll dive deeper into understanding **Terra
 - [Purpose of Terraform State File](#purpose-of-terraform-state-file)
 - [Terraform State File Metadata](#terraform-state-file-metadata)
 - [Terraform State Performance and Caching](#terraform-state-performance-and-caching)
-- [terraform_remote_state Data Source](#terraform_remote_state-data-source)
+-- [terraform_remote_state Data Source](#terraform_remote_state-data-source)
 - [Terraform State Storage, Manual State Pull/Push, and Locking](#terraform-state-storage-manual-state-pullpush-and-locking)
   - [Storage](#storage)
   - [Manual State Pull/Push](#manual-state-pullpush)
