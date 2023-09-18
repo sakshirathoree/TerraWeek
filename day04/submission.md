@@ -80,11 +80,13 @@ The Terraform state file plays a crucial role in the infrastructure management p
 - Step-4: Now you have run the terraform destroy command.
 - End Result: Terraform only deletes EC2 instance
 
-**Conclusion **- It can only find EC2 instance resource metadata in the terraform state file and there is no reference to S3 bucket because you have created the bucket manually and terraform state file have no clue about S3 Bucket.
+**Conclusion-** It can only find EC2 instance resource metadata in the terraform state file and there is no reference to S3 bucket because you have created the bucket manually and terraform state file have no clue about S3 Bucket.
 
-This is how Terraform maintains a dependency order for maintaining the infrastructure inventory. It is highly recommended to always have provision or update your infrastructure only with the terraform.
+This is **how Terraform maintains a dependency order for maintaining the infrastructure inventory.** It is highly recommended to always have provision or update your infrastructure only with the terraform.
 
 Here is a sample copy of the metadata of my terraform state file -
+
+![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/ab4af10b-8263-4b5b-b029-b403940e90ea)
 
 
 ## Terraform State Performance and Caching
@@ -164,7 +166,7 @@ resource "aws_instance" "rj-test" {
 Terraform state files can be stored locally as well as remotely depending on your need. Storage of terraform state files is defined by the backend.
 
    **Local Storage**- Consider the following example of where terraform state storage is local -
-   ```
+```
 data "terraform_remote_state" "remote_state" {
   backend = "local"
 }
