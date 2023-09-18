@@ -119,9 +119,6 @@ Well yes, you can use **`terraform_remote_state`** data source to retrieve the m
 
 Here is an example code snippet of terraform_remote_state with remote backend -
 
-![image](https://github.com/sakshirathoree/TerraWeek/assets/67737704/4171d983-17e2-4152-92e8-80802c7448d7)
-
-
 **Remote Backend Example:**
 
 ```hcl
