@@ -2,6 +2,7 @@
 
 Welcome to **Day 4** of Terraweek!, we'll dive deeper into understanding **Terraform state files, their importance, and how to manage them effectively.**
 
+
 ## Table of Contents
 - [Terraform State File (terraform.tfstate)](#terraform-state-file-terraformtfstate)
   - [What is Terraform State (terraform.tfstate) file?](#1-what-is-terraform-state-terraformtfstate-file)
@@ -10,12 +11,13 @@ Welcome to **Day 4** of Terraweek!, we'll dive deeper into understanding **Terra
 - [Purpose of Terraform State File](#purpose-of-terraform-state-file)
 - [Terraform State File Metadata](#terraform-state-file-metadata)
 - [Terraform State Performance and Caching](#terraform-state-performance-and-caching)
--- [terraform_remote_state Data Source](#terraform_remote_state-data-source)
+- [terraform_remote_state Data Source](#terraform_remote_state-data-source)
 - [Terraform State Storage, Manual State Pull/Push, and Locking](#terraform-state-storage-manual-state-pullpush-and-locking)
   - [Storage](#storage)
   - [Manual State Pull/Push](#manual-state-pullpush)
   - [Terraform State Locking](#terraform-state-locking)
 - [Conclusion](#conclusion)
+
 
 
 
