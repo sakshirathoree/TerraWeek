@@ -171,7 +171,19 @@ data "terraform_remote_state" "remote_state" {
 - When using the local storage terraform will persist/save the state file on the local disk
 - But if you are using the local storage then you have to manually push and pull the Terraform state file.
 
-2. Manual state pull/push
+**Remote Storage**:
+
+Consider the following example where we have defined the storage as remote:
+
+```hcl
+data "terraform_remote_state" "remote_state" {
+  backend = "remote"
+}
+```
+- When using the remote storage terraform will not persist/save the state file on the local disk.
+- Remote storage of Terraform state files is really beneficial for teams with multiple developers
+
+**2. Manual state pull/push**
 
 In the previous point, we discussed how to store state files locally and remotely. But apart from storing the state file there two more important operations -
 
