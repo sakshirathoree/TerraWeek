@@ -177,8 +177,7 @@ data "terraform_remote_state" "remote_state" {
     backend = "local"
   }
 ```
-
-- When using the remote storage terraform will not persist/save the state file on the local disk.
+- When using the remote storage terraform will not persist the state file on the local disk.
 - Remote storage of Terraform state files is really beneficial for teams with multiple developers.
 
 
