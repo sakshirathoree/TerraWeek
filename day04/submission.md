@@ -12,10 +12,11 @@ Welcome to **Day 4** of Terraweek!, we'll dive deeper into understanding **Terra
 - [Terraform State Performance and Caching](#terraform-state-performance-and-caching)
 - [terraform_remote_state Data Source](#terraform_remote_state-data-source)
 - [Terraform State Storage, Manual State Pull/Push, and Locking](#terraform-state-storage-manual-state-pullpush-and-locking)
-  - [Storage](#81-storage)
-  - [Manual State Pull/Push](#82-manual-state-pullpush)
-  - [Terraform State Locking](#83-terraform-state-locking)
+  - [Storage](#storage)
+  - [Manual State Pull/Push](#manual-state-pullpush)
+  - [Terraform State Locking](#terraform-state-locking)
 - [Conclusion](#conclusion)
+
 
 
 ## Terraform State File (terraform.tfstate)
