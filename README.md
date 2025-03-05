@@ -1,6 +1,6 @@
-# Terraweek Challenge
+# Terraweek Challenge March Edition Version 2.2 New version
 
-Welcome to the Terraweek Challenge! 🚀
+Welcome to the Terraweek New Challenge! 🚀
 
 This repository is your one-stop destination for all things Terraform. Whether you're a seasoned pro or new to infrastructure as code, we've got you covered.
 
