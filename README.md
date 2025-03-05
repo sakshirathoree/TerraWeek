@@ -1,4 +1,4 @@
-# Terraweek Challenge
+# Terraweek Challenge March Edition
 
 Welcome to the Terraweek Challenge! 🚀
 
