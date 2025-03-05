@@ -1,4 +1,4 @@
-# Terraweek Challenge March Edition Version 2.2
+# Terraweek Challenge March Edition Version 2.2 New version
 
 Welcome to the Terraweek New Challenge! 🚀
 
